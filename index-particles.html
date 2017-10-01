@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+    <head>
+        
+        <!-- meta Data -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- title -->
+        <title>Sanchitt Dhir</title>
+        
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <link rel="stylesheet" href="css/default_theme.css" />
+        <link rel="stylesheet" href="css/light_template.css" />
+        
+        <!-- Plugins -->
+        <link rel="stylesheet" href="css/lightbox.min.css" />
+        <link rel="stylesheet" href="css/swiper.min.css" />
+        
+        <!-- google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400" />
+
+        
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+        <script>
+            // Ajax function
+            
+            function _(id) {
+
+                return document.getElementById(id);
+
+            }
+
+            function submitForm() {
+
+                _("btn").disabled = true;
+                _("status").innerHTML = 'please wait ...';
+
+                var formdata = new FormData(),
+                    ajax = new XMLHttpRequest();
+
+                formdata.append("name", _("name").value);
+                formdata.append("email", _("email").value);
+                formdata.append("subj", _("subj").value);
+                formdata.append("msg", _("msg").value);
+
+                ajax.open("POST", "contact.php");
+                ajax.onreadystatechange = function () {
+
+                    if (ajax.readyState === 4 && ajax.status === 200) {
+
+                        if (ajax.responseText === "success") {
+
+                            _("my_form").innerHTML = '<h2>Thanks ' + _("name").value + ',<br> <br> your message has been sent.</h2>';
+
+                        } else {
+
+                            _("status").innerHTML = ajax.responseText;
+                            _("btn").disabled = false;
+
+                        }
+                    }
+                };
+
+                ajax.send(formdata);
+            }
+        </script>
+    </head>
+    <body>
+        
+        <!-- Start Section Tool Box -->
+        
+        <section class="option-box">
+            <div class="color-option">
+
+                <ul class="list-unstyled dl">
+                    <li data-value="css/dark_template.css"> <span>Dark</span> </li>
+                    <li data-value="css/light_template.css"> <span>Light</span> </li>
+                </ul>
+            </div>
+            <i class="fa fa-gear fa-3x gear-check"></i>
+        </section>
+        
+        <!-- End Section Tool Box -->
+        
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <!--
+                  <a href="#">
+                      <span class="bg_logo"></span>
+                  </a>
+                  -->
+                                        <!-- You Can Edit the image on main.css file just search ( bg_logo_dark ) -->
+
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#home" data-value="home" class="active">Home</a></li>
+                        <li><a href="#about" data-value="about">About Me</a></li>
+                        <li><a href="#portfolio" data-value="portfolio">Portfolio</a></li>
+                        <li><a href="#contact" data-value="contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- End Navbar -->
+        
+        <!-- Start Header -->
+        
+        <section id="home" class="home">
+            <div class="overlay-home">
+                <div id="particles-js" class="particles">
+                    <div class="title text-center">
+                        <!--<h1>Welcome :)</h1> --><!-- Here The Title Of Template -->
+                        <p class="type"></p> <!-- You Can Edit the title on the custom.js File -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- End Header -->
+        
+        <!-- Start About -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="title text-center">
+                    <h1>About me</h1>
+                    <div class="line"></div>
+                </div>
+                <div class="image">
+                    <img src="images/about/meme.png" class="img-responsive" alt="image Personel"/>
+                </div>
+                <div class="infos">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-3 title-info">
+                                    <p>Profile</p>
+                                    <p>Email</p>
+                                    <p>Social Media</p>
+                                    <p>Skills</p>
+                                </div>
+                                <div class="col-xs-9 info-perso">
+                                    <p>Jr UI|UX Designer</p>
+                                    <p>sanchitt.d@hotmail.com</p>
+                                    <div class="social-media">
+                                        <a href="https://www.linkedin.com/in/sanchittdhir/" target="_blank"><i class="fa fa-linkedin"></i></a> 
+                                               <!-- Edit ^ Your website -->
+                                        <a href="https://angel.co/sanchitt-dhir" target="_blank"><i class="fa fa-angellist"></i></a>
+                                        <a href="https://www.instagram.com/sanchitt/" target="_blank"><i class="fa fa-instagram"></i></a>
+
+                                        <!--
+                                        <a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a> -->
+                                    </div>
+                                    <div class="skills">
+                                        <p class="progress-text">html/css</p> <!-- Here You Can Edit The Name Of Skill -->
+                                        <div class="progress">
+                                            <div class="progress-bar" data-present="70%"></div> <!-- Here You Can Edit The Percentage -->
+                                        </div>
+                                        <p class="progress-text">User Interface</p> <!-- Here You Can Edit The Name Of Skill -->
+                                        <div class="progress">
+                                            <div class="progress-bar" data-present="78%"></div> <!-- Here You Can Edit The Percentage -->
+                                        </div>
+                                        <p class="progress-text">User Experience</p> <!-- Here You Can Edit The Name Of Skill -->
+                                        <div class="progress">
+                                            <div class="progress-bar" data-present="78%"></div> <!-- Here You Can Edit The Percentage -->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a href="sanchittresume.PDF">Download Resume</a>
+                                <a href="#contact">Get in touch</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 parag">
+
+                            <p>Hi, my name is Sanchitt Dhir I'm a Toronto based Junior UI/UX Designer and Front-end Developer. I pride myself on being an easy to work with designer that likes to turn ideas into reality. </p>
+
+                            <p>Growing up I've always been interested in photography & computers and with a background in computer science I've been fortunate to be able to put those together and truly enjoy what I do. <b>"It's not what you see, it's how you see it".</b></p>
+
+                            <p> As Junior UI/UX Desinger & Front-end Developer I'm only just getting started. I genuinely enjoy the process of creating something from nothing. I'm always willing to learn something new and always eager to improve on what I know; you can never know enough. </p>
+
+                           <p>Apart from my profession, I enjoy traveling, photography, music, working out and being an avid netflix-er.</p>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- End About -->
+        
+
+        <!-- End Stat -->
+        
+        
+        <!-- Start Services -->
+
+        
+        <!-- End Services -->
+        
+        
+        <!-- Start Testim -->
+        <section class="testim text-center">
+            <div class="overlay"></div>
+            <div class="quote">
+                <i class="fa fa-quote-left"></i>
+                <p></p>
+                <i class="fa fa-quote-right"></i>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <q>Get closer than ever to your customers. So close that you tell them what they need well before they realize it themselves.</q>
+                        <span>Steve Jobs</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <q>Design can be art. Design can be aesthetics. Design is so simple, that's why it is so complicated.</q>
+                        <span>Paul Boag</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <q>Users are not always logical, at least not on the surface. To be a great designer you need to look a little deeper into how people think and act.</q>
+                        <span>Paul Boag</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            
+        </section>
+        
+        <!-- End Testim -->
+        
+        
+        <!-- Start Work -->
+        <section id="portfolio" class="work">
+            <div class="container">
+                <div class="title text-center">
+                    <h1>Portfolio</h1>
+                    <div class="line"></div>
+                </div>
+                <div class="info">
+                    <div class="items-box">
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="item text-center">
+                                    <div class="over">
+                                        <h4>Pay Gas As You Go</h4>
+                                        <p>Click to learn more.(coming soon)</p>
+                                        <a href="images/portfolio/paynowGas.png" data-lightbox="image-1" data-title="Project Title"> 
+                                                <!-- ^ And Here -->
+                                            <i class="fa fa-arrows-alt"></i>
+                                        </a>
+                                    </div>
+                                    <img src="images/portfolio/paynowGas.png"  style="width:450px;height:240px;" alt="imgPort1" class="img-responsive">
+                                        <!-- Here ^ You Can Change image And Up -->
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="item">
+                                    <div class="over text-center">
+                                        <h4>Breeze</h4>
+                                        <p>Click to learn more.(coming soon)</p>
+                                        <a href="images/portfolio/Breeze.png" data-lightbox="image-1" data-title="Project Title">
+                                                            <!-- ^ And Here -->
+                                            <i class="fa fa-arrows-alt"></i>
+                                        </a>
+                                    </div>
+                                    <img src="images/portfolio/Breeze.png" style="width:450px;height:240px;" alt="imgPort2" class="img-responsive">
+                                         <!-- Here ^ You Can Change image And Up -->
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="item">
+                                    <div class="over text-center">
+                                        <h4>Performance Concept B2B</h4>
+                                        <p>Cloud Car Performance is a concept in which users are able to track their performance, daily drives and receive alerts when they should get it inspected.</p>
+                                        <a href="images/portfolio/performance.png" data-lightbox="image-1" data-title="Project Title">
+                                                            <!-- ^ And Here -->
+                                            <i class="fa fa-arrows-alt"></i>
+                                        </a>
+                                    </div>
+                                    <img src="images/portfolio/performance.png" style="width:450px;height:240px;" alt="imgPort3" class="img-responsive">
+                                         <!-- Here ^ You Can Change image And Up -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="item">
+                                    <div class="over text-center">
+                                        <h4>Fitness Me Concept</h4>
+                                        <p>Click to learn more.(coming soon)</p>
+                                        <a href="images/portfolio/runner.png" data-lightbox="image-1" data-title="Project Title">
+                                                            <!-- ^ And Here -->
+                                            <i class="fa fa-arrows-alt"></i>
+                                        </a>
+                                    </div>
+                                    <img src="images/portfolio/runner.png" style="width:450px;height:240px;" alt="imgPort4" class="img-responsive">
+                                         <!-- Here ^ You Can Change image And Up -->
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="item">
+                                    <div class="over text-center">
+                                        <h4>Travel App Concept</h4>
+                                        <p>Quick easy to use travel app. Making the process of traveling by plane more convenient.</p>
+                                        <a href=images/portfolio/travel.png" data-lightbox="image-1" data-title="Project Title">
+                                                            <!-- ^ And Here -->
+                                            <i class="fa fa-arrows-alt"></i>
+                                        </a>
+                                    </div>
+                                    <img src="images/portfolio/travel.png" style="width:450px;height:240px;" alt="imgPort5" class="img-responsive">
+                                         <!-- Here ^ You Can Change image And Up -->
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="item">
+                                    <div class="over text-center">
+                                        <h4>Hubb Grubb</h4>
+                                        <p>This appication allows users with access to the top rated TV Shows & Movies from any category. Finding movies to watch just got easier! /p>
+                                        <a href="images/portfolio/movie.png" data-lightbox="image-1" data-title="Project Title">
+                                                            <!-- ^ And Here -->
+                                            <i class="fa fa-arrows-alt"></i>
+                                        </a>
+                                    </div>
+                                    <img src="images/portfolio/movie.png" style="width:450px;height:240px;" alt="imgPort6" class="img-responsive">
+                                         <!-- Here ^ You Can Change image And Up -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ********************* Start Add New Gallery ********************* -->
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="item less">
+                                    <div class="over text-center">
+                                        <h4>Feed Me Now Concept</h4>
+                                        <p>This is a tinder for food type of concept that shows eateries near you.</p>
+                                        <a href="images/portfolio/feedmenow.png" data-lightbox="image-1" data-title="Project Title">
+                                                            <!-- ^ And Here -->
+                                            <i class="fa fa-arrows-alt"></i>
+                                        </a>
+                                    </div>
+                                    <img src="images/portfolio/feedmenow.png" style="width:450px;height:240px;" alt="imgPort1" class="img-responsive">
+                                         <!-- Here ^ You Can Change image And Up -->
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="item less">
+                                    <div class="over text-center">
+                                        <h4>Nearby Eateries Concept</h4>
+                                        <p>Click to learn more. (coming soon)</p>
+                                        <a href="images/portfolio/foodfind.png" data-lightbox="image-1" data-title="Project Title">
+                                                            <!-- ^ And Here -->
+                                            <i class="fa fa-arrows-alt"></i>
+                                        </a>
+                                    </div>
+                                    <img src="images/portfolio/foodfind.png" style="width:450px;height:240px;" alt="imgPort2" class="img-responsive">
+                                         <!-- Here ^ You Can Change image And Up -->
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="item less">
+                                    <div class="over text-center">
+                                        <h4>Medical App Concept</h4>
+                                        <p>This application is a self-diagonsis concept in which users are able to input their problems and find out the necessary information they would need in-order to treat themselves.</p>
+                                        <a href="images/portfolio/med.png" data-lightbox="image-1" data-title="Project Title">
+                                                            <!-- ^ And Here -->
+                                            <i class="fa fa-arrows-alt"></i>
+                                        </a>
+                                    </div>
+                                    <img src="images/portfolio/med.png" style="width:450px;height:240px;" alt="imgPort3" class="img-responsive">
+                                         <!-- Here ^ You Can Change image And Up -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ********************* End Add New Gallery ********************* -->
+                        <!-- To Add New images just copy This part ^ and past it down this and edit it  -->
+                    </div>
+                    <button class="show-more upper">Show More</button>
+                    <button class="show-less upper">Show Less</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- End Work -->
+        
+        
+        <!-- Start Contact -->
+        <section id="contact" class="contact">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="title text-center">
+                    <h1>Get in touch with me</h1>
+                    <div class="line"></div>
+                </div>
+                <div class="infos text-center">
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-12 commun">
+                            <i class="fa fa-envelope-o"></i>
+                            <span>Email</span>
+                            <a href="mailto:sanchitt.d@hotmail.com">sanchitt.d@hotmail.com</a>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 commun">
+                            <i class="fa fa-phone"></i>
+                            <span>Phone</span>
+                            <a href="tel:+123-345-9982">647-460-7137</a>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 commun">
+                            <i class="fa fa-map-marker"></i>
+                            <span>Address</span>
+                            <a>Toronto, Canada</a>
+                        </div>
+                    </div>
+                    <!--
+                    <form id="my_form" method="post" onsubmit="submitForm(); return false;">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-12">
+                                <input id="name" type="text" name="name" placeholder="Your Name" required/>
+                                <input id="email" type="email" name="email" placeholder="E-mail" required/>
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="message">
+                                    <textarea id="msg" placeholder="Write Your message here ..." required></textarea>
+                                </div>
+                            </div>
+                            <p><input id="btn" type="submit" value="Send Message" /><span id="status"></span></p>
+                        </div>
+                    </form>
+                    -->
+                </div>
+                <!-- Start Footer -->
+                <footer class="text-center">
+                    <div class="social-media">
+                        <a href="https://www.linkedin.com/in/sanchittdhir/" target="_blank"><i class="fa fa-linkedin"></i></a> 
+                                       <!-- Edit ^ Your website -->
+                        <a href="https://angel.co/sanchitt-dhir" target="_blank"><i class="fa fa-angellist"></i></a>
+                        <a href="https://www.instagram.com/sanchitt/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    </div>
+                    <div class="copyright">
+                        <p>© Sanchitt Dhir 2017. </p>
+                        <p>All Rights Reserved</p>
+                    </div>
+            <div class="scrolltop">
+                <i class="fa fa-angle-double-up"></i>
+            </div>
+
+                </footer>
+                <!-- End Footer -->
+            </div>
+        </section>
+        
+        <!-- End Contact -->
+        
+        <!-- Start SrollTop -->
+        
+
+        
+        <!-- End SrollTop -->
+        
+        <!-- Start Loading -->
+        
+        <section class="loading-overlay">
+            <div class="cssload-loader">
+                <div class="cssload-inner cssload-one"></div>
+                <div class="cssload-inner cssload-two"></div>
+                <div class="cssload-inner cssload-three"></div>
+            </div>
+        </section>
+        
+        <!-- End Loading -->
+        
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/lightbox.min.js"></script>
+        <script src="js/typed.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/swiper.min.js"></script>
+        <script src="js/particles.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/custom.js"></script>
+    </body>
+</html>
