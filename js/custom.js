@@ -45,7 +45,7 @@ $(function () {
         }),
         // Typed Plugin
         typed = new Typed('.type', {
-            strings: ["Hi! My name's Sanchitt Dhir", "I'm a end to end product designer.", "I love designing mobile and website applications.", "Enjoy !"], /* Here Type Your Title */
+            strings: ["Hi! My name is Sanchitt Dhir", "I'm a end to end product designer.", "I love designing mobile and website applications.", "Enjoy !"], /* Here Type Your Title */
             typeSpeed: 100,
             loop: true,
             backDelay: 1200,
