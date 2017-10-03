@@ -32,49 +32,7 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
         
-        <script>
-            // Ajax function
-            
-            function _(id) {
-
-                return document.getElementById(id);
-
-            }
-
-            function submitForm() {
-
-                _("btn").disabled = true;
-                _("status").innerHTML = 'please wait ...';
-
-                var formdata = new FormData(),
-                    ajax = new XMLHttpRequest();
-
-                formdata.append("name", _("name").value);
-                formdata.append("email", _("email").value);
-                formdata.append("subj", _("subj").value);
-                formdata.append("msg", _("msg").value);
-
-                ajax.open("POST", "contact.php");
-                ajax.onreadystatechange = function () {
-
-                    if (ajax.readyState === 4 && ajax.status === 200) {
-
-                        if (ajax.responseText === "success") {
-
-                            _("my_form").innerHTML = '<h2>Thanks ' + _("name").value + ',<br> <br> your message has been sent.</h2>';
-
-                        } else {
-
-                            _("status").innerHTML = ajax.responseText;
-                            _("btn").disabled = false;
-
-                        }
-                    }
-                };
-
-                ajax.send(formdata);
-            }
-        </script>
+      
     </head>
     <body>
         
@@ -281,11 +239,9 @@
                                 <div class="item">
                                     <div class="over text-center">
                                         <h4>Breeze</h4>
+                                        <a href="breeze.html">
                                         <p>Click to learn more.(coming soon)</p>
-                                        <p>BreezyBrand is a fashion application concept that allows those that are passionate about fashion trends to be on top of the game. The app allows users to stay up to date with the latest fashion news of their favorite brands/ idols and giving them the freedom of selecting what they want with a guarantee that what they order is always from a verified source and not a replica.</p>
-                                        <a href="images/portfolio/Breeze.png" data-lightbox="image-1" data-title="Mobile Design">
-                                                            <!-- ^ And Here -->
-                                            <i class="fa fa-arrows-alt"></i>
+                                 
                                         </a>
                                     </div>
                                     <img src="images/portfolio/Breeze.png" style="width:460px;height:340px;" alt="imgPort2" class="img-responsive">
