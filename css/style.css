@@ -1,3 +1,4 @@
+
 @charset "utf-8";
 /*------------------------------------------------------------------
 [Master Stylesheet]
@@ -164,6 +165,11 @@ Section Text:       15px/1.7 "Open Sans", arial, sans-serif;
 
 .full-wrapper {
     margin: 0 2%;
+    height:     auto;       /* These two lines were the key. */
+    min-height: 100%
+    /*overflow:   hidden;*/ /* Do not use this, it crops in small browsers. */
+    margin:     0px auto;
+    padding:    0px auto;
 }
 .container-fluid{
     max-width: 1170px;
