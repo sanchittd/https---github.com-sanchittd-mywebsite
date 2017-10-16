@@ -164,8 +164,7 @@ Section Text:       15px/1.7 "Open Sans", arial, sans-serif;
 }
 
 .full-wrapper {
-    margin:  0px auto;
-    
+    margin: 0 2%;
 }
 .container-fluid{
     max-width: 1170px;
